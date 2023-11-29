@@ -10,16 +10,18 @@ source:
   sha256: 5274462e6b5cfc87ebd789537ce0c574bbee10f119f10bdd4d852eca28dd2d99
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
+  skip: true  # [py<37]
   number: 0
 
 requirements:
   host:
-    - python >=3.7,<4.0
+    - python
     - pip
+    - wheel
+    - setuptools
   run:
-    - python >=3.7,<4.0
+    - python
     - pyyaml <7.0.0,>=5.1.0
     - msrest >=0.6.18
     - azure-core <2.0.0,>=1.23.0
@@ -51,9 +53,12 @@ test:
 about:
   home: https://github.com/Azure/azure-sdk-for-python
   summary: Microsoft Azure Machine Learning Client Library for Python
-  dev_url: https://github.com/Azure/azure-sdk-python
+  description: Microsoft Azure Machine Learning Client Library for Python
   license: Apache-2.0
+  license_family: Apache
   license_file: NOTICE.txt
+  doc_url: https://learn.microsoft.com/en-us/python/api/azure-ai-ml/azure.ai.ml?view=azure-python
+  dev_url: https://github.com/Azure/azure-sdk-for-python
 
 extra:
   recipe-maintainers:
