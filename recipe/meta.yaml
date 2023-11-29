@@ -54,8 +54,8 @@ about:
   home: https://github.com/Azure/azure-sdk-for-python
   summary: Microsoft Azure Machine Learning Client Library for Python
   description: Microsoft Azure Machine Learning Client Library for Python
-  license: Apache-2.0
-  license_family: Apache
+  license: MIT
+  license_family: MIT
   license_file: NOTICE.txt
   doc_url: https://learn.microsoft.com/en-us/python/api/azure-ai-ml/azure.ai.ml?view=azure-python
   dev_url: https://github.com/Azure/azure-sdk-for-python
